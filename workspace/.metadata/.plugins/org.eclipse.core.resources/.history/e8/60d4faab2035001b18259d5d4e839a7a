@@ -1,0 +1,108 @@
+package e_oop;
+
+public class Airconditioner {
+
+	boolean power = false;
+	int temperature = 1; //온도
+	int capacity = 5;  //풍량
+
+	final int MIN_TEM = 10;
+	final int MAX_TEM = 40;
+	final int MIN_CAP = 0;
+	final int MAX_CAP = 10;
+	
+	
+	void power(){ 
+		power = !power;
+		System.out.println(power ? "에어컨 ON" : "에어컨 OFF");
+	}
+	
+	void changeTamperature(int temperature){
+		if(power){
+			if(MIN_TEM <= temperature && temperature <= MAX_TEM){
+				this.temperature = temperature;
+			}
+			System.out.println("온도. " + this.temperature);
+		}
+	}
+	
+	void temperatureUp(){
+		changeTamperature(temperature +1); 
+	}
+	
+	void temperatureDown(){
+		changeTamperature(temperature -1); 
+	}
+	
+	void capacityUp(){
+		if(power){
+			if(capacity < MAX_CAP){
+				capacity++;
+			}
+			showCapacity();
+		}
+	}
+	
+	void capacityDown(){
+		if(power){
+			if(capacity < MIN_CAP){
+				capacity--;
+			}
+			showCapacity2();
+		}
+	}
+	
+	void showCapacity(){
+		System.out.print("풍량. ");
+		for(int i = MIN_CAP + 1; i <= MAX_CAP; i++){
+			if(i <= capacity){
+				System.out.print("▶");
+			}else{
+				System.out.print("▷");
+			}
+		}
+		System.out.println();
+		
+	}
+	void showCapacity2(){
+		System.out.print("풍량. ");
+		for(int i = MIN_CAP + 1; i <= MAX_CAP; i++){
+			if(i <= capacity){
+				System.out.print("◀");
+			}else{
+				System.out.print("◁");
+			}
+		}
+		System.out.println();
+	}
+	
+	public static void main(String[] args) {
+		TV tv = new TV();
+		
+		while(true){
+			System.out.println("--------------------------------");
+			System.out.println("1.전원 2.채널변경 3.채널업 4.채널다운");
+			System.out.println("5.볼륨업 6.볼륨다운 0.종료");
+			System.out.println("--------------------------------");
+			System.out.println("번호 입력>");
+			int input = ScanUtil.nextint();
+			
+			switch(input) {
+			case 1: tv.power(); break;
+			case 2:
+				System.out.println("변경할 채널 입력>");
+				int ch = ScanUtil.nextint();
+				tv.changeChannel(ch);
+				break;
+			case 3: tv.channelUp(); break;
+			case 4: tv.channelDown(); break;
+			case 5: tv.volumeUp(); break;
+			case 6: tv.volumeDown(); break;
+			case 0:
+				System.out.println("종료되었습니다.");
+				System.exit(0);
+
+			}
+		}
+	}
+}

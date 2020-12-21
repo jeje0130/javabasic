@@ -1,0 +1,72 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+public class JDBCBoard {
+
+	public static void main(String[] args) {
+		/*
+		 * 오라클 데이터베이스에 게시판 테이블을 생성하고, 게시판 프로그램을 만들어주세요.
+		 * 테이블 : TB_JDBC_BOARD
+		 * 컬럼 : BOARD_NO, TITLE, CONTENT, USER_ID, REG_DATE
+		 */
+
+		
+		String ur1 = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user = "YJH01";
+		String password = "java";
+		
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		try {
+			con = DriverManager.getConnection(ur1, user, password);
+			
+			String sql = "insert into lprod values (?,?,?)";     
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, 11);               //물음표에 값을 넣는 메서드
+			ps.setString(2, "P601");
+			ps.setString(3, "유제품");
+		
+			
+			
+		}		
+			
+	}			
+			
+}			
+}			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
+		
+				

@@ -1,0 +1,21 @@
+package j_jdbc;
+
+public class JDBC {
+
+	public static void main(String[] args) {
+		/*
+		 * JDBC(Java Database Connectivity)
+		 * - 자바와 데이터베이스를 연결해주는 라이브러리
+		 * - ojdbc : 오라클 JDBC
+		 * 
+		 * JDBC 작성단계
+		 * 1. Connection 생성
+		 * 2. Statement 생성(쿼리)
+		 * 3. Query 실행
+		 * 4. ResultSet에서 결과 추출(select인 경우)
+		 * 5. ResultSet, Statement, Connection 닫기
+		 */
+
+	}
+
+}

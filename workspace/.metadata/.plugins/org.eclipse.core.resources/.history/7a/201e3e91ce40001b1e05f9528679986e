@@ -1,0 +1,55 @@
+package j_jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class JDBCUtil {
+	
+	//싱글톤 패턴 : 인스턴스의 생성을 제한하여 하나의 인스턴스만 사용하는 디자인 패턴(디자인 패턴 : 클래스를 설계하는 방식)
+	private JDBCUtil(){
+		
+	}
+	
+	//인스턴스를 보관할 변수
+	private static JDBCUtil instance;
+	
+	//인스턴스를 빌려주는 메서드
+	private static JDBCUtil getInstance(){
+		if(instance == null){
+			instance = new JDBCUtil();
+		}
+		return instance;
+	}
+	
+	String ur1 = "jdbc:oracle:thin:@localhost:1521:xe";
+	String user = "YJH01";
+	String password = "java";
+	
+	Connection con = null;
+	PreparedStatement ps = null;
+	ResultSet rs = null;
+	
+	/*
+	 * Map<String, Object> selectOne(String sql)
+	 * Map<String, Object> selectOne(String sql, List<Object> param)
+	 * List<Map<String, Object>> selectList(String sql)
+	 * List<Map<String, Object>> selectList(String sql, List<Object> param)
+	 * int update(String sql)
+	 * int update(String sql, List<Object> param)
+	 */
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+package e_oop;
+
+public class Airconditioner {
+
+	boolean power = false;
+	int temperature = 1; //온도
+	int capacity = 5;  //풍량
+
+	final int MIN_TEM = 10;
+	final int MAX_TEM = 40;
+	final int MIN_CAP = 0;
+	final int MAX_CAP = 10;
+	
+	
+	void power(){ 
+		power = !power;
+		System.out.println(power ? "에어컨 ON" : "에어컨 OFF");
+	}
+	
+	void changeTamperature(int temperature){
+		if(power){
+			if(MIN_TEM <= temperature && temperature <= MAX_TEM){
+				this.temperature = temperature;
+			}
+			System.out.println("온도. " + this.temperature);
+		}
+	}
+	
+	void temperatureUp(){
+		changeTamperature(temperature +1); 
+	}
+	
+	void temperatureDown(){
+		changeTamperature(temperature -1); 
+	}
+	
+	void capacityUp(){
+		if(power){
+			if(capacity < MAX_CAP){
+				capacity++;
+			}
+			showCapacity();
+		}
+	}
+	
+	void capacityDown(){
+		if(power){
+			if(capacity < MIN_CAP){
+				capacity--;
+			}
+			showCapacity2();
+		}
+	}
+	
+	void showCapacity(){
+		System.out.print("풍량. ");
+		for(int i = MIN_CAP + 1; i <= MAX_CAP; i++){
+			if(i <= capacity){
+				System.out.print("▶");
+			}else{
+				System.out.print("▷");
+			}
+		}
+		System.out.println();
+		
+	}
+	void showCapacity2(){
+		System.out.print("풍량. ");
+		for(int i = MIN_CAP + 1; i <= MAX_CAP; i++){
+			if(i <= capacity){
+				System.out.print("◀");
+			}else{
+				System.out.print("◁");
+			}
+		}
+		System.out.println();
+	}
+}
