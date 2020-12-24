@@ -1,0 +1,16 @@
+package controller;
+
+import java.util.Map;
+
+import util.JDBCUtil;
+
+public class Test {
+
+	public static void main(String[] args) {
+		JDBCUtil jdbc = JDBCUtil.getInstance();
+		String sql = "select ADD1 from RESTAURANTS where RES_NAME = '바로그집'";
+		Map<String, Object> result =jdbc.SelectOne(sql);
+		System.out.println(result.get("ADD1"));
+	}
+
+}
