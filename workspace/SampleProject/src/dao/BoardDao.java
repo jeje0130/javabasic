@@ -28,7 +28,7 @@ public class BoardDao {
 				+ " ON A.USER_ID = B.USER_ID "
 				+ " ORDER BY A.BOARD_NO DESC";
 		
-		return jdbc.selectList(sql);
+		return jdbc.SelectList(sql);
 	}
 }
 
