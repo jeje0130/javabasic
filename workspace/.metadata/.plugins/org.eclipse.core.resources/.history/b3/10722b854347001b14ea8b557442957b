@@ -1,0 +1,29 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import util.JDBCUtil;
+import util.ScanUtil;
+
+public class Test {
+
+	public static void main(String[] args) {
+		JDBCUtil jdbc = JDBCUtil.getInstance();
+		String sql = "select * from RESTAURANTS "
+					+ "where COUSINE = ? "
+					+ "and RES_NAME = ?";
+		List<Object> p = new ArrayList<>();
+		System.out.print("검색할 스타일 >");
+		String str = ScanUtil.nextLine();
+		p.add(str);
+		System.out.print("매장이름 >");
+		String str2 = ScanUtil.nextLine();
+		p.add(str2);
+		Map<String, Object> result =jdbc.SelectOne(sql,p);
+		System.out.print("주소 : " + result.get("ADD1"));
+		
+	}
+
+}

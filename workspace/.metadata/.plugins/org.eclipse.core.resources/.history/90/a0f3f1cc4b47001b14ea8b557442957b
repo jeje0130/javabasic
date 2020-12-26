@@ -1,0 +1,34 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import util.JDBCUtil;
+import util.ScanUtil;
+
+public class Test {
+
+	public static void main(String[] args) {
+		JDBCUtil jdbc = JDBCUtil.getInstance();
+		String sql = "select count(*) as RESULT from RESTAURANTS "
+					+ "where COUSINE = ? "
+					+ "and RES_NAME = ?";
+		List<Object> p = new ArrayList<>();
+		System.out.print("검색할 스타일 >");
+		String str = ScanUtil.nextLine();
+		p.add(str);
+		System.out.print("매장이름 >");
+		String str2 = ScanUtil.nextLine();
+		p.add(str2);
+		Map<String, Object> result =jdbc.SelectOne(sql,p);
+		String re = "1";
+		if(result.get("RESULT").toString().equals(re)){
+			System.out.println("검색한 결과가 존재합니다.");
+		}else{
+			System.out.println("검새한 결과가 존재하지 않습니다.");
+		}
+		
+	}
+
+}

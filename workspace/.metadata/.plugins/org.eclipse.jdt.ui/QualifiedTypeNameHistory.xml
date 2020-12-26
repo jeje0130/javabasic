@@ -28,9 +28,9 @@
 <fullyQualifiedTypeName name="dao.BoardDao"/>
 <fullyQualifiedTypeName name="util.ScanUtil"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="controller.Controller"/>
 <fullyQualifiedTypeName name="util.View"/>
 <fullyQualifiedTypeName name="service.BoardService"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,18 @@
+package controller;
+
+import java.util.List;
+import java.util.Map;
+
+import util.JDBCUtil;
+
+public class Test {
+
+	public static void main(String[] args) {
+		JDBCUtil jdbc = JDBCUtil.getInstance();
+		String sql = "select cousine from restaurants where RES_NAME ='맘스터치'";
+		Map<String, Object> result =jdbc.SelectOne(sql);
+		System.out.println(result.get("COUSINE"));
+		
+	}
+
+}

@@ -44,7 +44,7 @@ public class UserDao {
 		param.add(password);
 		
 		
-		return jdbc.selectOne(sql, param);
+		return jdbc.SelectOne(sql, param);
 	}
 
 

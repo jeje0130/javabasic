@@ -13,7 +13,7 @@ public class ScanUtil {
 		return s.nextLine();
 	}
 	
-	public static int nextint(){
+	public static int nextInt(){
 		return Integer.parseInt(s.nextLine());
 	}
 }

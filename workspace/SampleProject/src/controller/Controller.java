@@ -47,7 +47,7 @@ public class Controller {
 		System.out.println("----------------------------------------");
 		System.out.print("번호입력>");
 		
-		int input = ScanUtil.nextint();
+		int input = ScanUtil.nextInt();
 		
 		switch (input) {
 		case 1: return View.LOGIN;
