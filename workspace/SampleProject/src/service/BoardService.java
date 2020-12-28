@@ -42,13 +42,13 @@ public class BoardService {
 		System.out.println("1.조회\t2.등록\t0.로그아웃");
 		System.out.println("입력>");
 		
-		int input = ScanUtil.nextint();
+		int input = ScanUtil.nextInt();
 		
 		
 		switch(input){
 		case 1:
 			System.out.print("게시글 번호 입력>");
-			currentBoardNo = ScanUtil.nextint();
+			currentBoardNo = ScanUtil.nextInt();
 			return View.BOARD_VIEW;
 		case 2:
 			return View.BOARD_INSERT_FROM;
